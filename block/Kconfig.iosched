@@ -78,7 +78,6 @@ config CFQ_GROUP_IOSCHED
 	---help---
 	  Enable group IO scheduling in CFQ.
 
-
 config IOSCHED_BFQ
 	tristate "BFQ I/O scheduler"
 	default n
@@ -110,6 +109,9 @@ config IOSCHED_FIOPS
 
 config IOSCHED_SIOPLUS
 	tristate "Simple I/O scheduler plus"
+
+config IOSCHED_SIO
+	tristate "Simple I/O scheduler"
 	default y
 	---help---
 	  The Simple I/O scheduler is an extremely simple scheduler,
@@ -159,6 +161,9 @@ choice
 
 	config DEFAULT_NOOP
 		bool "No-op"
+
+	config DEFAULT_SIO
+		bool "SIO" if IOSCHED_SIO=y
 
 endchoice
 
