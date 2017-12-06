@@ -1,0 +1,217 @@
+Signature-Version: 1.0
+Created-By: MiX-Signer_1.1_B1707301
+SHA1-Digest-Manifest: XOhyuJUvowq4hhuzaIeW1WOqZ3Q=
+
+
+Name: META-INF/com/google/android/update-binary
+SHA1-Digest: VqZdRfOI7P+9/h+e5haqQWQMMxw=
+
+
+Name: anykernel/anykernel.sh
+SHA1-Digest: M++B/KzBPt45OdiPBDA0DloahaU=
+
+
+Name: META-INF/com/google/android/aroma/icons/back.png
+SHA1-Digest: FgyAJ5IPp92wNkcW+L1ClXJp7TY=
+
+
+Name: META-INF/com/google/android/aroma/themes/zetsubou/icon.trash.png
+SHA1-Digest: IEh7N95q+qeB3J5DCuDSIy2MKew=
+
+
+Name: META-INF/com/google/android/aroma/themes/zetsubou/button_rest.png
+SHA1-Digest: nLxVImUm96AGq8uSIffENYfO7lI=
+
+
+Name: META-INF/com/google/android/aroma/themes/zetsubou/button_focus.9.png
+SHA1-Digest: S7xxBzCr+yjIXVcijuhOlDERHMc=
+
+
+Name: META-INF/com/google/android/aroma/themes/zetsubou/cb_on.png
+SHA1-Digest: VG07fFe6eaDjav3Cb0VHbkdfTIo=
+
+
+Name: META-INF/com/google/android/aroma/icons/next.png
+SHA1-Digest: ClsYfFLqP5bZpEh9IDs/xJffgo0=
+
+
+Name: META-INF/com/google/android/aroma/themes/zetsubou/radio_on_sel.png
+SHA1-Digest: 1Y8IUJEZAnZ7rKneL6jhMlx2kQk=
+
+
+Name: anykernel/tools/unpackbootimg
+SHA1-Digest: ARWUENfdqH+uLTbl4jrfPx997uM=
+
+
+Name: META-INF/com/google/android/aroma/themes/zetsubou/icon.menu.png
+SHA1-Digest: 2p+3LlXMIH0UTb6BZbjSrqSpPuQ=
+
+
+Name: META-INF/com/google/android/aroma/themes/zetsubou/titlebar.png
+SHA1-Digest: 86pYcofMYLGnKa3z9oc248FxofQ=
+
+
+Name: META-INF/com/google/android/aroma/themes/zetsubou/radio_sel.png
+SHA1-Digest: /pPEVd7MnpIrEmHIAIHjW6vsXwI=
+
+
+Name: META-INF/com/google/android/aroma/themes/zetsubou/dialog.png
+SHA1-Digest: v/FXFUdG22TUa9BcFVIN7FNBvic=
+
+
+Name: META-INF/com/google/android/aroma/themes/zetsubou/navbar.png
+SHA1-Digest: bIS+zTzwCSCL1zHKMpiAtXMYvqQ=
+
+
+Name: META-INF/com/google/android/aroma/icons/welcome.png
+SHA1-Digest: imuf7OQbg3c3gMHDu4/P+GD6DlE=
+
+
+Name: anykernel/tools/ak2-core.sh
+SHA1-Digest: HajQ90l2GgwqLGYLnUnXW5hYWcU=
+
+
+Name: META-INF/com/google/android/aroma/themes/zetsubou/dialog_titlebar.9.png
+SHA1-Digest: sgN+yCy1cJrM5rvvJ2OIJTDMBhI=
+
+
+Name: META-INF/com/google/android/aroma/themes/zetsubou/icon.warning.png
+SHA1-Digest: 5H07GElSXPgYxcWEtV2ZWNeVgm8=
+
+
+Name: META-INF/com/google/android/aroma/ttf/droid.ttf
+SHA1-Digest: jLJ9bsYDTu7XEJX7GfhwIxGztyY=
+
+
+Name: anykernel/tools/mkbootimg
+SHA1-Digest: tfbyUbCH0u+VGBlCQBxc9Y5MuYM=
+
+
+Name: META-INF/com/google/android/aroma/fonts/big.png
+SHA1-Digest: LQ116i1ImZ2339R33MLBtzLucsM=
+
+
+Name: anykernel/tools/busybox
+SHA1-Digest: AP7mAkko5AYRpusrrIMejTH1Emk=
+
+
+Name: anykernel/META-INF/com/google/android/updater-script
+SHA1-Digest: kvfZNXkpeS+Iorm74ervN0kBoGg=
+
+
+Name: config/buildconfig.sh
+SHA1-Digest: 8pwUbq5Y0myhzKE+rhqawsNubc0=
+
+
+Name: META-INF/com/google/android/aroma/anim/zpx.png
+SHA1-Digest: XWxD2Pt7SVZCiXVgMaCVknH0K/Q=
+
+
+Name: META-INF/com/google/android/aroma/themes/zetsubou/button_press.9.png
+SHA1-Digest: xt+ZmRPxjta8mIQ3qrZB7R9jdCQ=
+
+
+Name: META-INF/com/google/android/aroma/themes/zetsubou/radio.png
+SHA1-Digest: tPUnREIAZNU3MnJ1Tqx/2KYF7CQ=
+
+
+Name: META-INF/com/google/android/aroma/themes/zetsubou/radio_on.png
+SHA1-Digest: n72fME1j4uEXFI4EUZg5yvP/+9Y=
+
+
+Name: config/buildcustomconfig.sh
+SHA1-Digest: ons76Jd3Xh72lqYY/KowscmS7DI=
+
+
+Name: META-INF/com/google/android/aroma/themes/zetsubou/button_focus.png
+SHA1-Digest: yyonkXqRYM/um7HgcC0bY1pIdfo=
+
+
+Name: META-INF/com/google/android/aroma/icons/changelog.png
+SHA1-Digest: VpdJTFPIDVqadzjHwYtAg4WjIw4=
+
+
+Name: META-INF/com/google/android/aroma/icons/dragon.png
+SHA1-Digest: Z0eVyWUu/yUPWkgiGR6hPqqnoVM=
+
+
+Name: META-INF/com/google/android/aroma/themes/zetsubou/dialog_titlebar.png
+SHA1-Digest: jlzCLNEI6tMso0oQwH/XFoEJSv8=
+
+
+Name: META-INF/com/google/android/aroma/themes/zetsubou/theme.prop
+SHA1-Digest: k1FSivtElmd1yZCeYJQ3bXZ55JQ=
+
+
+Name: META-INF/com/google/android/aroma-config
+SHA1-Digest: oANgECsN/8zmn5PSz1bAd+QZ0OA=
+
+
+Name: META-INF/com/google/android/aroma/themes/zetsubou/cb_on_sel.png
+SHA1-Digest: VgCRqG1BETUtjw/dpwEdC8TjRVk=
+
+
+Name: META-INF/com/google/android/aroma/fonts/small.png
+SHA1-Digest: jhTxvcTa0SrORlwcf4LqK1c1DMk=
+
+
+Name: META-INF/com/google/android/aroma/themes/zetsubou/button.9.png
+SHA1-Digest: Fzdy7UvW1IuM2aoenm8OLxuaxjk=
+
+
+Name: META-INF/com/google/android/aroma/icons/custom.png
+SHA1-Digest: 19wX8gyUZA2AH1L5Y/4KRDdhdZ0=
+
+
+Name: META-INF/com/google/android/update-binary-installer
+SHA1-Digest: gdfR0aYth6IMJnoGabkd9qr6hdg=
+
+
+Name: META-INF/com/google/android/aroma/themes/zetsubou/progress_empty.9.png
+SHA1-Digest: zJOguLVL7bbRxxiJUNWPaYdCYTU=
+
+
+Name: anykernel/dtb
+SHA1-Digest: wjdPVYVoJ9AGWBggdTpvY8G8p5U=
+
+
+Name: META-INF/com/google/android/updater-script
+SHA1-Digest: pREEgvrZNFRgHh418/WTxsPumR8=
+
+
+Name: META-INF/com/google/android/aroma/themes/zetsubou/progress_full.9.png
+SHA1-Digest: voyzdA6HIoO2xqgZ7Zg1g3zt+8c=
+
+
+Name: anykernel/META-INF/com/google/android/update-binary
+SHA1-Digest: kQKw0ZiSTc9evYaDrTMrq+UvJT0=
+
+
+Name: META-INF/com/google/android/aroma/themes/zetsubou/dialog.9.png
+SHA1-Digest: dhDYtxo7APeIjTimVASBwuOLAC4=
+
+
+Name: META-INF/com/google/android/aroma/themes/zetsubou/cb.png
+SHA1-Digest: FF5oQw+p/zWZy+0Kv/cJI6idZqs=
+
+
+Name: META-INF/com/google/android/aroma/themes/zetsubou/bg.png
+SHA1-Digest: 9HUq7YKBYYiWzkmIoQ8FYQ8cmzU=
+
+
+Name: META-INF/com/google/android/aroma/agreement.txt
+SHA1-Digest: gpGgV8VQzOGUS2J9GyNOs3+cKHM=
+
+
+Name: META-INF/com/google/android/aroma/themes/zetsubou/icon.install.png
+SHA1-Digest: vr7JWfE/kQleDBh2TE+Ntudc/70=
+
+
+Name: META-INF/com/google/android/aroma/themes/zetsubou/cb_sel.png
+SHA1-Digest: SK1MPIoii9J1lbglMcpKa/wAvRE=
+
+
+Name: META-INF/com/google/android/aroma/themes/zetsubou/button_press.png
+SHA1-Digest: nxrGvpi4axTFu8zE88dLBOacZSs=
+
+
