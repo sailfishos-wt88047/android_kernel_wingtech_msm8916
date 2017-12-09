@@ -36,7 +36,7 @@ dump_boot;
 
 # begin ramdisk changes
 
-# add zetsubou initialization script
+# add excalibur initialization script
 insert_line init.rc "import /init.excalibur.rc" after "import /init.environ.rc" "import /init.excalibur.rc";
 cp /tmp/init.excalibur.rc /tmp/anykernel/ramdisk/init.excalibur.rc
 chmod 0750 /tmp/anykernel/ramdisk/init.excalibur.rc

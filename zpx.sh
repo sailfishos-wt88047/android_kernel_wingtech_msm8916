@@ -159,7 +159,7 @@ cp -r ./arch/arm/boot/dt.img $ANYKERNEL/anykernel/dtb
 
 # generate changelog
 echo "Generating changelog...";
-git --no-pager log --pretty=oneline --abbrev-commit cd3d5932..HEAD > $AROMA/changelog.txt
+git --no-pager log --pretty=oneline --abbrev-commit 4af53a7b..HEAD > $AROMA/changelog.txt
 
 # Create flashable zip
 if [ -f $KERNELPATH/$ZIMAGE ]; then
