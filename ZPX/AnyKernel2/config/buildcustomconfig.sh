@@ -179,11 +179,6 @@ echo "write /sys/module/msm_thermal/parameters/enabled Y" >> $CONFIGFILE
 
 echo "" >> $CONFIGFILE
 
-echo "#disable touchboost" >> $CONFIGFILE
-echo "write /sys/module/msm_performance/parameters/touchboost 0" >> $CONFIGFILE
-
-echo "" >> $CONFIGFILE
-
 echo "#cpu-boost" >> $CONFIGFILE
 echo "write /sys/module/cpu_boost/parameters/input_boost_freq \"0:800000 1:800000 2:800000 3:800000\"" >> $CONFIGFILE
 echo "write /sys/module/cpu_boost/parameters/input_boost_ms 1000" >> $CONFIGFILE
