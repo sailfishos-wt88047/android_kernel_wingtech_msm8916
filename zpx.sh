@@ -129,7 +129,7 @@ fi
 #@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#
 ## you can tune the job number depends on the cores
    v=`cat .extraversion`;
-  EV=EXTRAVERSION=-$v-;
+  EV=EXTRAVERSION=-$v;
  make $EV -j$MAKE_JOBS
 
 #@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#
