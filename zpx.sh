@@ -138,7 +138,7 @@ fi
 
 #@@@@@@@@@@@@@@@@ AnyKernel2 @@@@@@@@@@@@@@@@@@@@@@#
 # Environment variables for flashable zip creation (AnyKernel2)
-ANYKERNEL=./ZPX/AnyKernel2;
+ANYKERNEL=$PWD/ZPX/AnyKernel2;
 AROMA=$ANYKERNEL/META-INF/com/google/android/aroma;
 
 ##sesuaikan lokasi boot arm/arm64 dan nama zImage
