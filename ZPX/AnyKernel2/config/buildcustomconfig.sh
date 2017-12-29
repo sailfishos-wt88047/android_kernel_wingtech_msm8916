@@ -53,7 +53,6 @@ echo "" >> $CONFIGFILE
 
 echo "#set I/O scheduler" >> $CONFIGFILE
 echo "write /sys/block/mmcblk0/queue/rq_affinity 1" >> $CONFIGFILE
-echo "write /sys/block/mmcblk0/queue/read_ahead_kb 256" >> $CONFIGFILE
 
 echo "" >> $CONFIGFILE
 
@@ -95,16 +94,27 @@ elif [ $gov = 7 ]; then
 echo "write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor performance" >> $CONFIGFILE
 elif [ $gov = 8 ]; then
 echo "write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor powersave" >> $CONFIGFILE
-elif [ $gov = 9 ]; then
-echo "write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor userspace" >> $CONFIGFILE
 else
-echo "write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor performance" >> $CONFIGFILE
+echo "write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor userspace" >> $CONFIGFILE
+fi
+
+echo "" >> $CONFIGFILE
+echo "#read ahead buffer size" >> $CONFIGFILE
+SCHED=`grep selected.2 /tmp/aroma/sched.prop | cut -d '=' -f2`
+if [ $SCHED = 1 ]; then
+echo "write /sys/block/mmcblk0/queue/read_ahead_kb 128" >> $CONFIGFILE
+elif [ $SCHED = 2 ]; then
+echo "write /sys/block/mmcblk0/queue/read_ahead_kb 256" >> $CONFIGFILE
+elif [ $SCHED = 3 ]; then
+echo "write /sys/block/mmcblk0/queue/read_ahead_kb 512" >> $CONFIGFILE
+else
+echo "write /sys/block/mmcblk0/queue/read_ahead_kb 768" >> $CONFIGFILE
 fi
 
 echo "" >> $CONFIGFILE
 
 echo "#interactive gov" >> $CONFIGFILE
-echo "write /sys/devices/system/cpu/cpufreq/interactive/target_loads 85" >> $CONFIGFILE
+echo "write /sys/devices/system/cpu/cpufreq/interactive/target_loads 80" >> $CONFIGFILE
 echo "write /sys/devices/system/cpu/cpufreq/interactive/io_is_busy 1" >> $CONFIGFILE
 
 echo "" >> $CONFIGFILE

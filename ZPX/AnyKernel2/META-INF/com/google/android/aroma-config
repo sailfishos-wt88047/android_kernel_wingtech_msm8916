@@ -114,8 +114,7 @@ selectbox(
   "ondemand","",0,
   "performance","",0,
   "powersave","",0,
-  "userspace","",0,
-  "zzmoove","",0
+  "userspace","",0
 );
 
 checkbox(
@@ -138,6 +137,7 @@ selectbox(
 
 selectbox(
   "\nI/O Schedulers","<@center><b>\nSelect the I/O scheduler you would like to use</b>\n\n</@>","","sched.prop",
+  "Select I/O Scheduler","",2,
   "bfq","",0,
   "cfq","",0,
   "deadline","",0,
@@ -146,7 +146,12 @@ selectbox(
   "row","",0,
   "sio","",0,
   "sioplus","",0,
-  "zen","(recommended)",1
+  "zen","(recommended)",1,
+  "Select read ahead buffer size","", 2,
+  "128","",0,
+  "256","",1,
+  "512","",0,
+  "768","",0
 );
 
 selectbox(

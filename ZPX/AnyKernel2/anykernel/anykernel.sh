@@ -56,7 +56,7 @@ replace_line init.qcom.power.rc "write /sys/devices/system/cpu/cpu0/cpufreq/scal
 fi;
 
 #set io scheduler
-SCHED=`grep selected.0 /tmp/aroma/sched.prop | cut -d '=' -f2`
+SCHED=`grep selected.1 /tmp/aroma/sched.prop | cut -d '=' -f2`
 if [ $SCHED = 1 ]; then
 replace_line init.qcom.power.rc "setprop sys.io.scheduler" "    setprop sys.io.scheduler \"bfq\"";
 elif [ $SCHED = 2 ]; then

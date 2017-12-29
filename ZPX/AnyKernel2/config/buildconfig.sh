@@ -17,7 +17,7 @@ echo "write /sys/block/mmcblk0/queue/read_ahead_kb 256" >> $CONFIGFILE
 echo "" >> $CONFIGFILE
 
 echo "#interactive gov" >> $CONFIGFILE
-echo "write /sys/devices/system/cpu/cpufreq/interactive/target_loads 85" >> $CONFIGFILE
+echo "write /sys/devices/system/cpu/cpufreq/interactive/target_loads 80" >> $CONFIGFILE
 echo "write /sys/devices/system/cpu/cpufreq/interactive/io_is_busy 1" >> $CONFIGFILE
 echo "" >> $CONFIGFILE
 
