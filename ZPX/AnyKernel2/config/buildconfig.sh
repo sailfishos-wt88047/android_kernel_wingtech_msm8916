@@ -41,7 +41,7 @@ echo "write /sys/module/cpu_boost/parameters/input_boost_ms 1000" >> $CONFIGFILE
 echo "" >> $CONFIGFILE
 
 echo "#set vibrator intensity" >> $CONFIGFILE
-echo "write /sys/class/timed_output/vibrator/vtg_level 18" >> $CONFIGFILE
+echo "write /sys/class/timed_output/vibrator/vtg_level 21" >> $CONFIGFILE
 
 echo "" >> $CONFIGFILE
 

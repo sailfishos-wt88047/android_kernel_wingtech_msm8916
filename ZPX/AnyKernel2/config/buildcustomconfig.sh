@@ -183,6 +183,20 @@ fi
 
 echo "" >> $CONFIGFILE
 
+echo "#Custom Vibrator intensity " >> $CONFIGFILE
+misc2=`grep selected.0 /tmp/aroma/misc2.prop | cut -d '=' -f2`
+if [ $misc2 = 1 ]; then
+echo "write /sys/class/timed_output/vibrator/vtg_level 14" >> $CONFIGFILE
+elif [ $misc2 = 2 ]; then
+echo "write /sys/class/timed_output/vibrator/vtg_level 18" >> $CONFIGFILE
+elif [ $misc2 = 3 ]; then
+echo "write /sys/class/timed_output/vibrator/vtg_level 21" >> $CONFIGFILE
+else
+echo "write /sys/class/timed_output/vibrator/vtg_level 27" >> $CONFIGFILE
+fi
+
+echo "" >> $CONFIGFILE
+
 echo "#disable core control and enable msm thermal" >> $CONFIGFILE
 echo "write /sys/module/msm_thermal/core_control/enabled 0" >> $CONFIGFILE
 echo "write /sys/module/msm_thermal/parameters/enabled Y" >> $CONFIGFILE
@@ -192,11 +206,6 @@ echo "" >> $CONFIGFILE
 echo "#cpu-boost" >> $CONFIGFILE
 echo "write /sys/module/cpu_boost/parameters/input_boost_freq \"0:800000 1:800000 2:800000 3:800000\"" >> $CONFIGFILE
 echo "write /sys/module/cpu_boost/parameters/input_boost_ms 1000" >> $CONFIGFILE
-
-echo "" >> $CONFIGFILE
-
-echo "#set vibrator intensity" >> $CONFIGFILE
-echo "write /sys/class/timed_output/vibrator/vtg_level 18" >> $CONFIGFILE
 
 echo "" >> $CONFIGFILE
 
