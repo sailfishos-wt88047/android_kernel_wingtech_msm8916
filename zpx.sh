@@ -37,7 +37,7 @@ yellow='\033[0;33m'
 red='\033[0;31m'
 nocol='\033[0m'
 ## should be preset in arch/arm/configs of kernel-code
-KERNEL_DEFCONFIG=wt88047_defconfig
+KERNEL_DEFCONFIG=lineageos_wt88047_defconfig
 
 ## make jobs
 MAKE_JOBS=$(grep -c ^processor /proc/cpuinfo)
