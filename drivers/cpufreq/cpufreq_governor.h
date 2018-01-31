@@ -134,7 +134,6 @@ struct cpu_dbs_common_info {
 	u64 prev_cpu_idle;
 	u64 prev_cpu_wall;
 	u64 prev_cpu_nice;
-	unsigned int deferred_periods;
 	struct cpufreq_policy *cur_policy;
 	struct delayed_work work;
 	/*
