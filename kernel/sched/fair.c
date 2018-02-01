@@ -1252,7 +1252,7 @@ static inline void decay_scaled_stat(struct sched_avg *sa, u64 periods);
 /* Initial task load. Newly created tasks are assigned this load. */
 unsigned int __read_mostly sched_init_task_load_pelt;
 unsigned int __read_mostly sched_init_task_load_windows;
-unsigned int __read_mostly sysctl_sched_init_task_load_pct = 100;
+unsigned int __read_mostly sysctl_sched_init_task_load_pct = 15;
 
 static inline unsigned int task_load(struct task_struct *p)
 {
@@ -1291,9 +1291,8 @@ unsigned int __read_mostly sysctl_sched_mostly_idle_nr_run = 3;
 /*
  * Control whether or not individual CPU power consumption is used to
  * guide task placement.
- * This sysctl can be set to a default value using boot command line arguments.
  */
-unsigned int __read_mostly sysctl_sched_enable_power_aware = 0;
+unsigned int __read_mostly sched_enable_power_aware = 0;
 
 /*
  * This specifies the maximum percent power difference between 2
@@ -1647,7 +1646,7 @@ struct cpu_pwr_stats __weak *get_cpu_pwr_stats(void)
 
 static void clear_same_powerband_cpus(struct rq *rq, cpumask_t *search_cpus)
 {
-	if (!sysctl_sched_enable_power_aware) {
+	if (!sched_enable_power_aware) {
 		if (min_max_capacity_delta_pct <=
 		    sysctl_sched_powerband_limit_pct ||
 		    rq->max_possible_capacity == min_max_possible_capacity)
@@ -1665,7 +1664,7 @@ int power_delta_exceeded(unsigned int cpu_cost, unsigned int base_cost)
 	if (!base_cost || cpu_cost == base_cost)
 		return 0;
 
-	if (!sysctl_sched_enable_power_aware)
+	if (!sched_enable_power_aware)
 		return min_max_capacity_delta_pct >
 		       sysctl_sched_powerband_limit_pct;
 
@@ -1680,10 +1679,9 @@ unsigned int power_cost_at_freq(int cpu, unsigned int freq)
 	int i = 0;
 	struct cpu_pwr_stats *per_cpu_info = get_cpu_pwr_stats();
 	struct cpu_pstate_pwr *costs;
-	struct freq_max_load *max_load;
 
 	if (!per_cpu_info || !per_cpu_info[cpu].ptable ||
-	    !sysctl_sched_enable_power_aware)
+	    !sched_enable_power_aware)
 		/* When power aware scheduling is not in use, or CPU
 		 * power data is not available, just use the CPU
 		 * capacity as a rough stand-in for real CPU power
@@ -1696,18 +1694,12 @@ unsigned int power_cost_at_freq(int cpu, unsigned int freq)
 
 	costs = per_cpu_info[cpu].ptable;
 
-	rcu_read_lock();
-	max_load = rcu_dereference(per_cpu(freq_max_load, cpu));
 	while (costs[i].freq != 0) {
-		if (costs[i+1].freq == 0 ||
-		    (costs[i].freq >= freq &&
-		     (!max_load || max_load->freqs[i] >= freq))) {
-			rcu_read_unlock();
+		if (costs[i].freq >= freq ||
+		    costs[i+1].freq == 0)
 			return costs[i].power;
-		}
 		i++;
 	}
-	rcu_read_unlock();
 	BUG();
 }
 
@@ -1739,7 +1731,7 @@ static inline unsigned int power_cost(u64 task_load, int cpu)
 {
 	struct rq * rq = cpu_rq(cpu);
 
-	if (!sysctl_sched_enable_power_aware)
+	if (!sched_enable_power_aware)
 		return rq->max_possible_capacity;
 	else
 		return __power_cost(task_load, cpu);
@@ -1749,7 +1741,7 @@ static inline unsigned int power_cost_task(struct task_struct *p, int cpu)
 {
 	struct rq *rq = cpu_rq(cpu);
 
-	if (!sysctl_sched_enable_power_aware)
+	if (!sched_enable_power_aware)
 		return rq->max_possible_capacity;
 	else
 		return __power_cost(scale_load_to_cpu(task_load(p), cpu), cpu);
@@ -2443,7 +2435,7 @@ static inline int migration_needed(struct rq *rq, struct task_struct *p)
 	if (!task_will_fit(p, cpu_of(rq)))
 		return MOVE_TO_BIG_CPU;
 
-	if (sysctl_sched_enable_power_aware &&
+	if (sched_enable_power_aware &&
 	    lower_power_cpu_available(p, cpu_of(rq)))
 		return MOVE_TO_POWER_EFFICIENT_CPU;
 
@@ -2514,7 +2506,7 @@ static inline int nr_big_tasks(struct rq *rq)
 
 #else	/* CONFIG_SCHED_HMP */
 
-#define sysctl_sched_enable_power_aware 0
+#define sched_enable_power_aware 0
 
 static inline int select_best_cpu(struct task_struct *p, int target, int reason)
 {
@@ -6210,8 +6202,7 @@ static bool update_sd_pick_busiest(struct lb_env *env,
 	/* Mark a less power-efficient CPU as busy only if we haven't
 	 * seen a busy group yet. We want to prioritize spreading
 	 * work over power optimization. */
-	if (sysctl_sched_enable_power_aware &&
-	    !sds->busiest && sg->group_weight == 1 &&
+	if (!sds->busiest && sg->group_weight == 1 &&
 	    sgs->sum_nr_running && (env->idle != CPU_NOT_IDLE) &&
 	    power_cost_at_freq(env->dst_cpu, 0) <
 	    power_cost_at_freq(cpumask_first(sched_group_cpus(sg)), 0)) {
@@ -7011,7 +7002,7 @@ void idle_balance(int this_cpu, struct rq *this_rq)
 	 * most power-efficient idle CPU. */
 	rcu_read_lock();
 	sd = rcu_dereference_check_sched_domain(this_rq->sd);
-	if (sd && sysctl_sched_enable_power_aware) {
+	if (sd && sched_enable_power_aware) {
 		for_each_cpu(i, sched_domain_span(sd)) {
 			if (i == this_cpu || idle_cpu(i)) {
 				cost = power_cost_at_freq(i, 0);
@@ -7429,7 +7420,7 @@ static int select_lowest_power_cpu(struct cpumask *cpus)
 	int lowest_power_cpu = -1;
 	int lowest_power = INT_MAX;
 
-	if (sysctl_sched_enable_power_aware) {
+	if (sched_enable_power_aware) {
 		for_each_cpu(i, cpus) {
 			cost = power_cost_at_freq(i, 0);
 			if (cost < lowest_power) {

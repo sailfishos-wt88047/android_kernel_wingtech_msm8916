@@ -33,13 +33,6 @@ extern __read_mostly int scheduler_running;
 #define TASK_USER_PRIO(p)	USER_PRIO((p)->static_prio)
 #define MAX_USER_PRIO		(USER_PRIO(MAX_PRIO))
 
-struct freq_max_load {
-	struct rcu_head rcu;
-	u32 freqs[0];
-};
-
-extern DEFINE_PER_CPU(struct freq_max_load *, freq_max_load);
-
 /*
  * Helpers for converting nanosecond timing to jiffy resolution
  */
@@ -520,8 +513,6 @@ struct rq {
 #ifdef CONFIG_SCHED_FREQ_INPUT
 	u64 curr_runnable_sum;
 	u64 prev_runnable_sum;
-	u64 nt_curr_runnable_sum;
-	u64 nt_prev_runnable_sum;
 #endif
 
 #ifdef CONFIG_SCHED_HMP
@@ -875,6 +866,7 @@ static inline void clear_reserved(int cpu)
 }
 
 extern unsigned int sched_enable_hmp;
+extern unsigned int sched_enable_power_aware;
 
 int mostly_idle_cpu(int cpu);
 extern void check_for_migration(struct rq *rq, struct task_struct *p);
