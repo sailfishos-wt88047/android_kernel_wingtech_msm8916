@@ -141,7 +141,8 @@ selectbox(
   "bfq","",0,
   "cfq","(recommended)",1,
   "deadline","",0,
-  "noop","",0
+  "noop","",0,
+  "row","",0
 );
 
 selectbox(
@@ -170,7 +171,8 @@ selectbox(
 );
 
 selectbox(
-  "\nCustom vibrator intensity","","","misc2.prop",
+  "\nMiscellaneous","","","misc2.prop",
+  "Custom vibration intensity","", 2,
   "10%","",0,
   "30%","",0,
   "50%","",1,
