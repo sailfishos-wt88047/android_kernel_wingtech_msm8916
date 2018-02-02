@@ -139,19 +139,9 @@ selectbox(
   "\nI/O Schedulers","<@center><b>\nSelect the I/O scheduler you would like to use</b>\n\n</@>","","sched.prop",
   "Select I/O Scheduler","",2,
   "bfq","",0,
-  "cfq","",0,
+  "cfq","(recommended)",1,
   "deadline","",0,
-  "fiops","",0,
-  "noop","",0,
-  "row","",0,
-  "sio","",0,
-  "sioplus","",0,
-  "zen","(recommended)",1,
-  "Select read ahead buffer size","", 2,
-  "128","",0,
-  "256","",1,
-  "512","",0,
-  "768","",0
+  "noop","",0
 );
 
 selectbox(
@@ -161,7 +151,7 @@ selectbox(
   "200MHz","",0,
   "Maximum", "", 2,
   "465MHz","",1,
-  "400MHz","",0,
+  "400MHz","",0
 );
 
 selectbox(

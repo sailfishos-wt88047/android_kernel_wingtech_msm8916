@@ -99,22 +99,9 @@ echo "write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor userspace" >> 
 fi
 
 echo "" >> $CONFIGFILE
-echo "#read ahead buffer size" >> $CONFIGFILE
-SCHED=`grep selected.2 /tmp/aroma/sched.prop | cut -d '=' -f2`
-if [ $SCHED = 1 ]; then
-echo "write /sys/block/mmcblk0/queue/read_ahead_kb 128" >> $CONFIGFILE
-elif [ $SCHED = 2 ]; then
-echo "write /sys/block/mmcblk0/queue/read_ahead_kb 256" >> $CONFIGFILE
-elif [ $SCHED = 3 ]; then
-echo "write /sys/block/mmcblk0/queue/read_ahead_kb 512" >> $CONFIGFILE
-else
-echo "write /sys/block/mmcblk0/queue/read_ahead_kb 768" >> $CONFIGFILE
-fi
-
-echo "" >> $CONFIGFILE
 
 echo "#interactive gov" >> $CONFIGFILE
-echo "write /sys/devices/system/cpu/cpufreq/interactive/target_loads 80" >> $CONFIGFILE
+echo "write /sys/devices/system/cpu/cpufreq/interactive/target_loads 50" >> $CONFIGFILE
 echo "write /sys/devices/system/cpu/cpufreq/interactive/io_is_busy 1" >> $CONFIGFILE
 
 echo "" >> $CONFIGFILE
@@ -199,11 +186,6 @@ echo "" >> $CONFIGFILE
 echo "#cpu-boost" >> $CONFIGFILE
 echo "write /sys/module/cpu_boost/parameters/input_boost_freq \"0:800000 1:800000 2:800000 3:800000\"" >> $CONFIGFILE
 echo "write /sys/module/cpu_boost/parameters/input_boost_ms 1000" >> $CONFIGFILE
-
-echo "" >> $CONFIGFILE
-
-echo "# VM tune up" >> $CONFIGFILE
-echo "write /proc/sys/vm/min_free_kbytes 4096" >> $CONFIGFILE
 
 echo "" >> $CONFIGFILE
 

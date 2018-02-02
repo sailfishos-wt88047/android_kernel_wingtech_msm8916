@@ -13,11 +13,10 @@ echo "" >> $CONFIGFILE
 
 echo "#set I/O scheduler" >> $CONFIGFILE
 echo "write /sys/block/mmcblk0/queue/rq_affinity 1" >> $CONFIGFILE
-echo "write /sys/block/mmcblk0/queue/read_ahead_kb 256" >> $CONFIGFILE
 echo "" >> $CONFIGFILE
 
 echo "#interactive gov" >> $CONFIGFILE
-echo "write /sys/devices/system/cpu/cpufreq/interactive/target_loads 80" >> $CONFIGFILE
+echo "write /sys/devices/system/cpu/cpufreq/interactive/target_loads 50" >> $CONFIGFILE
 echo "write /sys/devices/system/cpu/cpufreq/interactive/io_is_busy 1" >> $CONFIGFILE
 echo "" >> $CONFIGFILE
 
@@ -42,11 +41,6 @@ echo "" >> $CONFIGFILE
 
 echo "#set vibrator intensity" >> $CONFIGFILE
 echo "write /sys/class/timed_output/vibrator/vtg_level 21" >> $CONFIGFILE
-
-echo "" >> $CONFIGFILE
-
-echo "# VM tune up" >> $CONFIGFILE
-echo "write /proc/sys/vm/min_free_kbytes 4096" >> $CONFIGFILE
 
 echo "" >> $CONFIGFILE
 

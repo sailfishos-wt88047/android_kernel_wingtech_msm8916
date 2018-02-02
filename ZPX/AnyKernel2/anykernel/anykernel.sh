@@ -64,17 +64,9 @@ replace_line init.qcom.power.rc "setprop sys.io.scheduler" "    setprop sys.io.s
 elif [ $SCHED = 3 ]; then
 replace_line init.qcom.power.rc "setprop sys.io.scheduler" "    setprop sys.io.scheduler \"deadline\"";
 elif [ $SCHED = 4 ]; then
-replace_line init.qcom.power.rc "setprop sys.io.scheduler" "    setprop sys.io.scheduler \"fiops\"";
-elif [ $SCHED = 5 ]; then
 replace_line init.qcom.power.rc "setprop sys.io.scheduler" "    setprop sys.io.scheduler \"noop\"";
-elif [ $SCHED = 6 ]; then
-replace_line init.qcom.power.rc "setprop sys.io.scheduler" "    setprop sys.io.scheduler \"row\"";
-elif [ $SCHED = 7 ]; then
-replace_line init.qcom.power.rc "setprop sys.io.scheduler" "    setprop sys.io.scheduler \"sio\"";
-elif [ $SCHED = 8 ]; then
-replace_line init.qcom.power.rc "setprop sys.io.scheduler" "    setprop sys.io.scheduler \"sioplus\"";
 else
-replace_line init.qcom.power.rc "setprop sys.io.scheduler" "    setprop sys.io.scheduler \"zen\"";
+replace_line init.qcom.power.rc "setprop sys.io.scheduler" "    setprop sys.io.scheduler \"row\"";
 fi;
 
 #remove deprecated ipv6 rmnet entries
