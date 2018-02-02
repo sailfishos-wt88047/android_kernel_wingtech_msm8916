@@ -155,16 +155,13 @@ selectbox(
 );
 
 selectbox(
-  "\nGPU Settings","<@center><b>\nSet min/max frequency and adreno idler default state\n</b></@>","","gpu.prop",
+  "\nGPU Settings","<@center><b>\nSet min/max frequency\n</b></@>","","gpu.prop",
   "Minimum", "", 2,
   "100MHz","",1,
   "200MHz","",0,
   "Maximum", "", 2,
   "465MHz","",1,
   "400MHz","",0,
-  "Adreno Idler", "", 2,
-  "Enable","",1,
-  "Disable","",0
 );
 
 selectbox(

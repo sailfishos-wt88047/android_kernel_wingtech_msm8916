@@ -135,13 +135,6 @@ echo "write /sys/class/kgsl/kgsl-3d0/devfreq/max_freq 400000000" >> $CONFIGFILE
 echo "write /sys/class/kgsl/kgsl-3d0/max_gpuclk 400000000" >> $CONFIGFILE
 fi
 
-gpu=`grep selected.3 /tmp/aroma/gpu.prop | cut -d '=' -f2`
-if [ $gpu = 1 ]; then
-echo "write /sys/module/adreno_idler/parameters/adreno_idler_active Y" >> $CONFIGFILE
-else
-echo "write /sys/module/adreno_idler/parameters/adreno_idler_active N" >> $CONFIGFILE
-fi
-
 echo "" >> $CONFIGFILE
 
 echo "#KCAL " >> $CONFIGFILE
